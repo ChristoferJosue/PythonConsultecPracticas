@@ -1,0 +1,29 @@
+{
+    "usuarios": [
+      {
+        "nombre": "Juan Garcia",
+        "edad": 25,
+        "extranjero": true
+      },
+      {
+        "nombre": "Maria Torres",
+        "edad": 30,
+        "extranjero": false
+      },
+      {
+        "nombre": "Pedro Coronel",
+        "edad": 28,
+        "extranjero": true
+      },
+      {
+        "nombre": "Ana Perez",
+        "edad": 27,
+        "extranjero": false
+      },
+      {
+        "nombre": "Carlos Trujillo",
+        "edad": 32,
+        "extranjero": true
+      }
+    ]
+  }
