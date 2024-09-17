@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.11.0 on win32)" generated="2024-09-17T10:00:22.173684" rpa="false" schemaversion="5">
+<suite id="s1" name="Registro" source="C:\Users\chgonzalez\PycharmProjects\Python Project4\src\suitesbdd\registro.robot">
+<test id="s1-t1" name="Escenario 01: Crear un usuario - exitoso" line="7">
+<kw name="Abrir browser" owner="hooks">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:22.389968" level="INFO">Opening browser 'chrome' to base url 'http://www.automationpractice.pl/index.php'.</msg>
+<msg time="2024-09-17T10:00:23.703407" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
+<arg>${hooks.URL}</arg>
+<arg>${hooks.BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-17T10:00:22.389968" elapsed="4.894646"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-17T10:00:27.285217" elapsed="4.076119"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:00:22.389968" elapsed="8.971368"/>
+</kw>
+<kw name="Dado que accedo a la página de inicio de sesión del sistema" owner="loginPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:31.365969" level="INFO">Clicking element '//a[contains(.,'Sign in')]'.</msg>
+<arg>${login.buttonSinginMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-17T10:00:31.361336" elapsed="1.573671"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:00:31.361336" elapsed="1.573671"/>
+</kw>
+<kw name="Y creo un nuevo usuario" owner="addNewUserPage">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-17T10:00:32.937441" level="INFO">${random_value} = 97384</msg>
+<var>${random_value}</var>
+<arg>random.randint(0,100000)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-17T10:00:32.936966" elapsed="0.000475"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:32.938298" level="INFO">Typing text 'javierry97384@vorak.com' into text field '//input[@id='email_create']'.</msg>
+<arg>${addNewUser.inputCreateAccount_Email}</arg>
+<arg>javierry${random_value}@vorak.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-17T10:00:32.937939" elapsed="0.131076"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:33.071081" level="INFO">Clicking element '//button[@id='SubmitCreate']'.</msg>
+<arg>${addNewUser.buttonCreateAnAccount}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-17T10:00:33.069015" elapsed="0.060900"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:00:32.936235" elapsed="0.193680"/>
+</kw>
+<kw name="Cuando complete el registro" owner="addNewUserPage">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-17T10:00:36.132401" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-17T10:00:33.131703" elapsed="3.000698"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${addNewUser.radioTitle}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.132401" elapsed="0.007177"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:36.139578" level="INFO">Clicking element '//div[@id ='uniform-id_gender1']'.</msg>
+<arg>${addNewUser.radioTitle}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.139578" elapsed="0.060629"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Completar los campos del registro del formulario" owner="addNewUserPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:36.200207" level="INFO">Typing text 'Michael' into text field '//input[@id='customer_firstname']'.</msg>
+<arg>${addNewUser.inputFirstName}</arg>
+<arg>Michael</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.200207" elapsed="0.098376"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:36.299759" level="INFO">Typing text 'Alba' into text field '//input[@id ='customer_lastname']'.</msg>
+<arg>${addNewUser.inputLastName}</arg>
+<arg>Alba</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.299082" elapsed="0.098023"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:36.397105" level="INFO">Clicking element '//input[@id ='email']'.</msg>
+<arg>${addNewUser.actionButtonEmail}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.397105" elapsed="0.059854"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:36.457460" level="INFO">Typing text 'Teste@123' into text field '//input[@id ='passwd']'.</msg>
+<arg>${addNewUser.actionButtonPassword}</arg>
+<arg>Teste@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.457460" elapsed="0.149027"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:36.606487" level="INFO">Selecting options from selection list '//select[@id ='days']' by index 5.</msg>
+<arg>${addNewUser.selectBirthDay}</arg>
+<arg>5</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.606487" elapsed="0.157895"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:36.765244" level="INFO">Selecting options from selection list '//select[contains(@id,'months')]' by index 2.</msg>
+<arg>${addNewUser.selectBirthMonth}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.764745" elapsed="0.114217"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:36.878962" level="INFO">Selecting options from selection list '//select[contains(@id,'years')]' by value 1994.</msg>
+<arg>${addNewUser.selectBirthYear}</arg>
+<arg>1994</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.878962" elapsed="0.081029"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:00:36.200207" elapsed="0.759784"/>
+</kw>
+<arg>${fillAll}</arg>
+<arg>completar los campos del registro del formulario</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.200207" elapsed="0.759784"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:36.959991" level="INFO">Clicking element '//button[@id ='submitAccount']'.</msg>
+<arg>${addNewUser.buttonRegister}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-17T10:00:36.959991" elapsed="3.322397"/>
+</kw>
+<arg>${true}</arg>
+<status status="PASS" start="2024-09-17T10:00:33.131703" elapsed="7.150685"/>
+</kw>
+<kw name="Entonces validar si el usuario fue creado con éxito" owner="addNewUserPage">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-17T10:00:40.305095" level="INFO">Current page contains text 'Your account has been created'.</msg>
+<arg>Your account has been created</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-09-17T10:00:40.282388" elapsed="0.022707"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:00:40.282388" elapsed="0.022707"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-17T10:00:40.305095" elapsed="2.394095"/>
+</kw>
+<status status="PASS" start="2024-09-17T10:00:22.374126" elapsed="20.325564"/>
+</test>
+<status status="PASS" start="2024-09-17T10:00:22.173684" elapsed="20.526006"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Registro">Registro</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-17T10:00:22.374126" level="WARN">Imported resource file 'C:\Users\chgonzalez\PycharmProjects\Python Project4\src\page\checkoutPage.robot' is empty.</msg>
+<msg time="2024-09-17T10:00:23.703407" level="WARN">There was an error managing chromedriver (error sending request for url (https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json)); using driver found in the cache</msg>
+</errors>
+</robot>

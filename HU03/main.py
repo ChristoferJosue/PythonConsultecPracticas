@@ -7,7 +7,7 @@ from database import init_db,insert_user
 init_db()
 
 # Configurar y correr el servidor
-port = 8071
+port = 8081
 server_address = ('', port)
 httpd = HTTPServer(server_address, RequestHandler)
 print(f"Servidor en ejecución en el puerto {port}")
